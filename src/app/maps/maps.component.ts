@@ -50,7 +50,7 @@ export class MapsComponent implements OnInit {
         const Marker = new google.maps.Marker({
             
             position: myLatlng,
-            title: 'Hello World!'
+            title: 'Contact Us!'
         });
         // To add the marker to the map, call setMap();
         Marker.setMap(map);

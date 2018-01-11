@@ -8,7 +8,10 @@ import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 })
 export class AppComponent implements OnInit {
 
-     constructor(public location: Location) {}
+     constructor(public location: Location) {
+      localStorage.setItem('address','http://10.222.70.233:8080');
+
+     }
 
     ngOnInit(){
     }

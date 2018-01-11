@@ -2,6 +2,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
+import { User } from './User';
+
 
 @Component({
     selector: 'login',
@@ -32,9 +34,9 @@ import { LoginService } from './login.service';
         </div>
     </div>
 </div>
-    `, 
- 
-    styles : [`
+    `,
+
+    styles: [`
     .form-group>input {
         border: 1px solid greenyellow;
         box-shadow: 0px 1px 1px green;
@@ -69,25 +71,38 @@ import { LoginService } from './login.service';
         margin: auto;
     }
     `],
-    providers : [LoginService]
+    providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
-    email : string;
-    password : string;
-    loginService : LoginService;
-    constructor(loginService : LoginService) {
+    email: string;
+    password: string;
+    loginService: LoginService;
+    user: User;
+    username: string;
+    pass: string;
+    constructor(loginService: LoginService) {
         console.log(loginService.name);
         this.loginService = loginService;
-     }
-     authnticateCred(){
-        if(this.loginService.name === this.email && this.loginService.password === this.password){
-            alert('Login Successful');
-        }
-        else{
-            alert('Wrong admin creditential');
-        }
-     }
-    ngOnInit() { 
+
+    }
+    authnticateCred() {
+
+        this.loginService.getCred().subscribe(user => {
+            this.user = user;
+            console.log(this.user[0]);
+            localStorage.setItem('cred', JSON.stringify(this.user[0]));
+            this.username = this.user[0].username;
+            this.pass = this.user[0].password;
+            if (this.email == this.username && this.pass == this.password) {
+                alert("Success ");
+            }
+            else{
+                alert("login failed");
+            }
+        });
+        
+    }
+    ngOnInit() {
 
     }
 

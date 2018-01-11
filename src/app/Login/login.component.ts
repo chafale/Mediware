@@ -24,7 +24,7 @@ import { LoginService } from './login.service';
                             <input [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" autocomplete="off" [(ngModel)]="password">
                         </div>
                         <hr>
-                        <button type="submit" class="btn btn-success" style="width:200px; background-color:rgb(58, 58, 58); color:white;border-radius:20px !important;box-shadow:0px 2px 5px rgba(70, 90, 29, 0.281);">Login</button>
+                        <button (click)="authnticateCred();" class="btn btn-success" style="width:200px; background-color:rgb(58, 58, 58); color:white;border-radius:20px !important;box-shadow:0px 2px 5px rgba(70, 90, 29, 0.281);">Login</button>
                     </form>
                    
                 </div>
@@ -74,11 +74,19 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
     email : string;
     password : string;
+    loginService : LoginService;
     constructor(loginService : LoginService) {
         console.log(loginService.name);
-
+        this.loginService = loginService;
      }
-
+     authnticateCred(){
+        if(this.loginService.name === this.email && this.loginService.password === this.password){
+            alert('Login Successful');
+        }
+        else{
+            alert('Wrong admin creditential');
+        }
+     }
     ngOnInit() { 
 
     }

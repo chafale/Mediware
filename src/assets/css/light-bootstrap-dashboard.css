@@ -429,7 +429,7 @@ input:focus {
     background: -webkit-linear-gradient(top, #87CB16 0%, #6dc030 100%);
     background: -o-linear-gradient(top, #87CB16 0%, #6dc030 100%);
     background: -ms-linear-gradient(top, #87CB16 0%, #6dc030 100%);
-    background: linear-gradient(to bottom, #87CB16 0%, #6dc030 100%);
+    background: linear-gradient(to bottom, #9dff00bd 10%, #6dc03000 100%) !important;
     background-size: 150% 150%; }
   .sidebar[data-color="orange"]:after,
   .bootstrap-navbar[data-color="orange"]:after {

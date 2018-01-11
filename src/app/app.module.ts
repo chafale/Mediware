@@ -46,6 +46,7 @@ import { LoginComponent } from 'app/Login/login.component';
     RouterModule,
     AppRoutingModule,
     LbdModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

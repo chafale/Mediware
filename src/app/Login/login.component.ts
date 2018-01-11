@@ -1,6 +1,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from './login.service';
 
 @Component({
     selector: 'login',
@@ -15,11 +16,12 @@ import { Component, OnInit } from '@angular/core';
                     <form style="text-align: center !important;">
                         <div class="form-group">
                             <!-- <label for="exampleInputEmail1">Email address</label> -->
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email" autocomplete="off">
+                             <input type="email" [ngModelOptions]="{standalone: true}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email" autocomplete="off" [(ngModel)]="email">
+                            
                         </div>
                         <div class="form-group">
                             <!-- <label for="exampleInputPassword1">Password</label> -->
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" autocomplete="off">
+                            <input [ngModelOptions]="{standalone: true}" type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" autocomplete="off" [(ngModel)]="password">
                         </div>
                         <hr>
                         <button type="submit" class="btn btn-success" style="width:200px; background-color:rgb(58, 58, 58); color:white;border-radius:20px !important;box-shadow:0px 2px 5px rgba(70, 90, 29, 0.281);">Login</button>
@@ -66,11 +68,16 @@ import { Component, OnInit } from '@angular/core';
         left: 0;
         margin: auto;
     }
-    `]
+    `],
+    providers : [LoginService]
 })
 export class LoginComponent implements OnInit {
+    email : string;
+    password : string;
+    constructor(loginService : LoginService) {
+        console.log(loginService.name);
 
-    constructor() { }
+     }
 
     ngOnInit() { 
 

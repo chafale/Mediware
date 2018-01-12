@@ -1,12 +1,15 @@
 <div class="main-content">
         <div class="col-md-8">
-        <div class="card card-inverse" style="background-color: #fff; border-color: #333; min-height:480px; ">
+        <div class="card card-inverse" style="border-color: #333; min-height:480px; background:#c6deec url('/assets/img/clouds.png'); ">
                 <div class="card-block">
                     <div class="col-md-6" style="padding: 50px;">
-                        <div><span><img src="https://image.flaticon.com/icons/svg/136/136723.svg" alt=""style="width:80px;height:80px;"></span><span style="font-size: 18px; color:#616161;font-weight: 400;padding: 10px; ">Nagpur, India</span></div>
-                        <div style="padding-top: 50px; font-size: 30px">{{celcius}}&#8451; &nbsp; {{farenhiet}}&#8457;</div>
+                        <div><span><img id="rotimg" class="wlogo" src="{{wlogo}}" alt=""style="width:80px;height:80px;"></span><span style="font-size: 18px; color:#616161;font-weight: 400;padding: 10px; ">Nagpur, India</span></div>
+                        <div style="padding-top: 50px; font-size: 30px">
+                            <span style="color:rgb(112, 112, 112); font-size: 50px;">{{celcius}}</span>
+                            &#8451; &nbsp; 
+                            <span style="color:rgb(112, 112, 112); font-size: 30px;">{{farenhiet}}</span>&#8457;</div>
                         <!-- <div style="color:#616161;padding-bottom:10px" >Feels-Like : 24C-80F</div> -->
-                        <div>Min: {{weatherDetails?.main.temp_min}}&#8451; <br>Max: {{weatherDetails?.main.temp_max}}&#8451;</div>
+                        <div><span>Min:</span> {{weatherDetails?.main.temp_min}}&#8451; <br><span>Max:</span> {{weatherDetails?.main.temp_max}}&#8451;</div>
                         <div style="padding-top: 50px"></div>
                         
                         <div style="font-size: 20px;padding-top:10px ">{{weatherDetails?.weather[0].main}}</div>
@@ -16,7 +19,7 @@
                         </div>
                     <div class="col-md-6" style="padding:40px;">
                         <div class="card card-inverse" style="background-color: #fff ; height:400px ">
-                            <div style="text-align: center;padding-top: 20px"><img src="https://image.flaticon.com/icons/svg/658/658690.svg" style="width:50px;height: 50px" alt=""></div>
+                            <div style="text-align: center;padding-top: 20px"><img id="oscimg" src="{{tlogo}}" style="width:50px;height: 50px" alt=""></div>
                         <div style="padding: 20px;">
                            <div><span>Longitude</span><span style="float:right">{{weatherDetails?.coord.lon}}<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/149/149051.svg" alt=""></span></div><br/>
                            <div><span>Latitude</span><span style="float:right">{{weatherDetails?.coord.lat}}<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/616/616450.svg" alt=""></span></div><br/>
@@ -192,3 +195,6 @@
         </div>
     </div>
 </div>
+<script>
+    console.log('check');
+</script>

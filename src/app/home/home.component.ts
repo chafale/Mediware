@@ -12,7 +12,8 @@ import { WeatherService } from '../shared/weatherAPI/weather.service';
   
 })
 export class HomeComponent implements OnInit {
-
+    wlogo:string = 'https://image.flaticon.com/icons/svg/136/136723.svg'; 
+    tlogo:string = 'https://image.flaticon.com/icons/svg/658/658690.svg';
     private weatherService: WeatherService;
     public emailChartType: ChartType;
     public emailChartData: any;
@@ -41,6 +42,18 @@ export class HomeComponent implements OnInit {
         console.log(this.celcius);
         console.log(this.weatherDetails);
         console.log(weather.coord);
+        var ldate =  new Date();
+        var chour = ldate.getHours();
+        if(chour < 19)
+        this.wlogo = 'https://image.flaticon.com/icons/svg/136/136723.svg';
+        else
+        this.wlogo = '/assets/img/moon.png';
+        
+        if(this.celcius > 20)
+        this.tlogo = '/assets/img/temp.png';
+        else
+        this.tlogo = 'https://image.flaticon.com/icons/svg/658/658690.svg';
+        console.log(ldate.getHours());
       });
   }
 

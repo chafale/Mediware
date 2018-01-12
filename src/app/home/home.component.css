@@ -1,0 +1,29 @@
+@keyframes rotation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes oscrotation{
+    from{
+        transform: rotate(-30deg);
+    }
+    to{
+        transform: rotate(30deg);
+    }
+}
+#rotimg{
+    animation-name: rotation;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#oscimg{
+    animation-name: oscrotation;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}

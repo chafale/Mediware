@@ -1,47 +1,51 @@
 <div class="main-content">
+        <div class="col-md-8">
+        <div class="card card-inverse" style="background-color: #fff; border-color: #333; height:480px ">
+                <div class="card-block">
+                    <div class="col-md-6" style="padding: 50px;">
+                        <div><span><img src="https://image.flaticon.com/icons/svg/136/136723.svg" alt=""style="width:80px;height:80px;"></span><span style="font-size: 18px; color:#616161;font-weight: 400;padding: 10px; ">Nagpur, India</span></div>
+                        <div style="padding-top: 50px; font-size: 30px">23C-91F  </div>
+                        <div style="color:#616161;padding-bottom:10px" >Feels-Like : 24C-80F</div>
+                        <div>Min:15C-50F Max35C-102F</div>
+                        <div style="padding-top: 50px">This is some description of weather which will be fetch by api call dilkash ghazala</div>
+                        
+                        <div style="font-size: 20px;padding-top:10px ">Mostly Sunny</div>
+                              </div>
+                    <div class="col-md-6" style="padding:40px;">
+                        <div class="card card-inverse" style="background-color: #fff ; height:400px ">
+                            <div style="text-align: center;padding-top: 20px"><img src="https://image.flaticon.com/icons/svg/658/658690.svg" style="width:50px;height: 50px" alt=""></div>
+                        <div style="padding: 20px;">
+                           <div><span>Longitude</span><span style="float:right">8<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/149/149051.svg" alt=""></span></div><br/>
+                           <div><span>latitude</span><span style="float:right">8<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/616/616450.svg" alt=""></span></div><br/>
+                           <div><span>Humidty</span><span style="float:right">8<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/179/179147.svg" alt=""></span></div><br/>
+                           <div><span>Pressure</span><span style="float:right">8<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/686/686732.svg" alt=""></span></div><br/>
+                           <div><span>Wind</span><span style="float:right">8<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/615/615579.svg" alt=""></span></div>
+                        </div>
+                        </div>    
+                    </div>    
+                </div>
+              </div>
+        </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4">
-                <lbd-chart
-                  [title]="'Email Statistics'"
-                  [subtitle]="'Last Campaign Performance'"
-                  [chartClass]="'ct-perfect-fourth'"
-                  [chartType]="emailChartType"
-                  [chartData]="emailChartData"
-                  [legendItems]="emailChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-clock-o'"
-                  [footerText]="'Campaign sent 2 days ago'">
+                <lbd-chart [title]="'Email Statistics'" [subtitle]="'Last Campaign Performance'" [chartClass]="'ct-perfect-fourth'" [chartType]="emailChartType"
+                    [chartData]="emailChartData" [legendItems]="emailChartLegendItems" [withHr]="true" [footerIconClass]="'fa fa-clock-o'"
+                    [footerText]="'Campaign sent 2 days ago'">
                 </lbd-chart>
             </div>
-            <div class="col-md-8">
-                <lbd-chart
-                  [title]="'Users Behavior'"
-                  [subtitle]="'24 Hours performance'"
-                  [chartType]="hoursChartType"
-                  [chartData]="hoursChartData"
-                  [chartOptions]="hoursChartOptions"
-                  [chartResponsive]="hoursChartResponsive"
-                  [legendItems]="hoursChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-history'"
-                  [footerText]="'Updated 3 minutes ago'">
+            <div class="col-md-12">
+                <lbd-chart [title]="'Users Behavior'" [subtitle]="'24 Hours performance'" [chartType]="hoursChartType" [chartData]="hoursChartData"
+                    [chartOptions]="hoursChartOptions" [chartResponsive]="hoursChartResponsive" [legendItems]="hoursChartLegendItems"
+                    [withHr]="true" [footerIconClass]="'fa fa-history'" [footerText]="'Updated 3 minutes ago'">
                 </lbd-chart>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <lbd-chart
-                  [title]="'2014 Sales'"
-                  [subtitle]="'All products including Taxes'"
-                  [chartType]="activityChartType"
-                  [chartData]="activityChartData"
-                  [chartOptions]="activityChartOptions"
-                  [chartResponsive]="activityChartResponsive"
-                  [legendItems]="activityChartLegendItems"
-                  [withHr]="true"
-                  [footerIconClass]="'fa fa-check'"
-                  [footerText]="'Data information certified'">
+                <lbd-chart [title]="'2014 Sales'" [subtitle]="'All products including Taxes'" [chartType]="activityChartType" [chartData]="activityChartData"
+                    [chartOptions]="activityChartOptions" [chartResponsive]="activityChartResponsive" [legendItems]="activityChartLegendItems"
+                    [withHr]="true" [footerIconClass]="'fa fa-check'" [footerText]="'Data information certified'">
                 </lbd-chart>
             </div>
             <div class="col-md-6">
@@ -101,7 +105,8 @@
                                                 </label>
                                             </div>
                                         </td>
-                                        <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                                        <td>Flooded: One year later, assessing what was lost and what was found when a ravaging
+                                            rain swept through metro Detroit
                                         </td>
                                         <td class="td-actions text-right">
                                             <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
@@ -134,7 +139,7 @@
                                     <tr>
                                         <td>
                                             <div class="checkbox">
-                                                <input id="checkbox5" type="checkbox" >
+                                                <input id="checkbox5" type="checkbox">
                                                 <label for="checkbox5">
 
                                                 </label>

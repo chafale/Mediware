@@ -4,8 +4,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="header">
-                        <h4 class="title">Striped Table with Hover</h4>
-                        <p class="category">Here is a subtitle for this table</p>
+                        <h4 class="title">Diseases till date</h4>
+                        <p class="category">Find all Diseases history available</p>
                     </div>
                     <div class="content table-responsive table-full-width">
                           <table class="table table-hover table-striped">
@@ -17,35 +17,16 @@
                                 <tbody>
                                     <tr *ngFor="let row of tableData1.dataRows">
                                         <td *ngFor="let cell of row">{{cell}}</td>
+                                        <td><i style="color:#f44336" class="fa fa-pencil" aria-hidden="true"></i></td>
                                     </tr>
+                                   
                                 </tbody>
                           </table>
 
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="card card-plain">
-                    <div class="header">
-                        <h4 class="title">Table on Plain Background</h4>
-                        <p class="category">Here is a subtitle for this table</p>
-                    </div>
-                    <div class="content table-responsive table-full-width">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th *ngFor="let cell of tableData2.headerRow">{{ cell }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let row of tableData2.dataRows">
-                                    <td *ngFor="let cell of row">{{cell}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+    
         </div>
     </div>
 </div>

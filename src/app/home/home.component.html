@@ -4,22 +4,25 @@
                 <div class="card-block">
                     <div class="col-md-6" style="padding: 50px;">
                         <div><span><img src="https://image.flaticon.com/icons/svg/136/136723.svg" alt=""style="width:80px;height:80px;"></span><span style="font-size: 18px; color:#616161;font-weight: 400;padding: 10px; ">Nagpur, India</span></div>
-                        <div style="padding-top: 50px; font-size: 30px">23C-91F  </div>
-                        <div style="color:#616161;padding-bottom:10px" >Feels-Like : 24C-80F</div>
-                        <div>Min:15C-50F Max35C-102F</div>
-                        <div style="padding-top: 50px">This is some description of weather which will be fetch by api call dilkash ghazala</div>
+                        <div style="padding-top: 50px; font-size: 30px">{{celcius}}&#8451; &nbsp; {{farenhiet}}&#8457;</div>
+                        <!-- <div style="color:#616161;padding-bottom:10px" >Feels-Like : 24C-80F</div> -->
+                        <div>Min: {{weatherDetails?.main.temp_min}}&#8451; <br>Max: {{weatherDetails?.main.temp_max}}&#8451;</div>
+                        <div style="padding-top: 50px"></div>
                         
-                        <div style="font-size: 20px;padding-top:10px ">Mostly Sunny</div>
-                              </div>
+                        <div style="font-size: 20px;padding-top:10px ">{{weatherDetails?.weather[0].main}}</div>
+                        <div style="font-size: 15px;padding-top:10px;text-transform: capitalize;">{{weatherDetails?.weather[0].description}}</div>
+                        
+
+                        </div>
                     <div class="col-md-6" style="padding:40px;">
                         <div class="card card-inverse" style="background-color: #fff ; height:400px ">
                             <div style="text-align: center;padding-top: 20px"><img src="https://image.flaticon.com/icons/svg/658/658690.svg" style="width:50px;height: 50px" alt=""></div>
                         <div style="padding: 20px;">
-                           <div><span>Longitude</span><span style="float:right">8<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/149/149051.svg" alt=""></span></div><br/>
-                           <div><span>latitude</span><span style="float:right">8<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/616/616450.svg" alt=""></span></div><br/>
-                           <div><span>Humidty</span><span style="float:right">8<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/179/179147.svg" alt=""></span></div><br/>
-                           <div><span>Pressure</span><span style="float:right">8<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/686/686732.svg" alt=""></span></div><br/>
-                           <div><span>Wind</span><span style="float:right">8<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/615/615579.svg" alt=""></span></div>
+                           <div><span>Longitude</span><span style="float:right">{{weatherDetails?.coord.lon}}<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/149/149051.svg" alt=""></span></div><br/>
+                           <div><span>Latitude</span><span style="float:right">{{weatherDetails?.coord.lat}}<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/616/616450.svg" alt=""></span></div><br/>
+                           <div><span>Humidity</span><span style="float:right">{{weatherDetails?.main.humidity}}<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/179/179147.svg" alt=""></span></div><br/>
+                           <div><span>Pressure</span><span style="float:right">{{weatherDetails?.main.pressure}}<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/686/686732.svg" alt=""></span></div><br/>
+                           <div><span>Wind Speed</span><span style="float:right">{{weatherDetails?.wind.speed}} km/hr<img style="padding-left:2px;width:20px;height: 20px;" src="https://image.flaticon.com/icons/svg/615/615579.svg" alt=""></span></div>
                         </div>
                         </div>    
                     </div>    

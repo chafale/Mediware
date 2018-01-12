@@ -2,14 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import { LegendItem, ChartType } from '../lbd/lbd-chart/lbd-chart.component';
 import * as Chartist from 'chartist';
+import { WeatherService } from '../shared/weatherAPI/weather.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers: [WeatherService]
   
 })
 export class HomeComponent implements OnInit {
+
+    private weatherService: WeatherService;
     public emailChartType: ChartType;
     public emailChartData: any;
     public emailChartLegendItems: LegendItem[];
@@ -25,7 +29,20 @@ export class HomeComponent implements OnInit {
     public activityChartOptions: any;
     public activityChartResponsive: any[];
     public activityChartLegendItems: LegendItem[];
-  constructor() { }
+    public weatherDetails : any;
+    public farenhiet:any;
+    public celcius:any;
+  constructor(weatherService : WeatherService) { 
+      this.weatherService=weatherService;
+      this.weatherService.getURL().subscribe(weather => {
+        this.weatherDetails = weather;
+        this.celcius=Number(weather.main.temp);
+        this.farenhiet=(( 9 * this.celcius)/5)+32;
+        console.log(this.celcius);
+        console.log(this.weatherDetails);
+        console.log(weather.coord);
+      });
+  }
 
   ngOnInit() {
       this.emailChartType = ChartType.Pie;

@@ -13,7 +13,7 @@
             <br>
             <!-- <label>Message</label> -->
             <br>
-            <input type="text" name="message" id="message" placeholder="Your Message"  required>
+            <textarea rows="5" required placeholder="Your Message"></textarea>
             <br>
             <br>
             <button type="submit" class="btn btn-success">Submit</button>
@@ -37,8 +37,21 @@
             border: 1px solid greenyellow;
             border-radius: 10px;
         }
+        .messageform > form > input:focus{
+            border: 2px solid greenyellow;
+        }
         .hrbar{
             border: 1px solid greenyellow;
+        }
+        textarea{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid greenyellow;
+            border-radius: 10px;
+        }
+        textarea:focus{
+            border: 2px solid greenyellow;
+            outline: none;
         }
     </style>
 </div>

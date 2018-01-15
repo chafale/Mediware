@@ -1,33 +1,47 @@
 import { Component, OnInit } from '@angular/core';
+import { DiseasesService } from 'app/tables/table.service';
 
 declare interface TableData {
     headerRow: string[];
-    dataRows: string[][];
+    loader : boolean;
+
 }
 
 @Component({
   selector: 'app-tables',
   templateUrl: './tables.component.html',
-  styleUrls: ['./tables.component.css']
+  styleUrls: ['./tables.component.css'],
+  providers : [DiseasesService]
 })
 export class TablesComponent implements OnInit {
     public tableData1: TableData;
-   
+    private diseasesService : DiseasesService;
+    private allDiseases : any;
+    private loader : boolean;
+    private dataRow : any;
 
-  constructor() { }
+  constructor(diseasesService : DiseasesService) {
+   
+      this.diseasesService = diseasesService;
+      this.loader = false;
+      
+      this.diseasesService.getAllDiseases().subscribe(diseases => {
+        this.allDiseases = diseases;
+        console.log(this.allDiseases);
+        this.dataRow = this.allDiseases;
+        this.loader = true;
+});
+
+   }
 
   ngOnInit() {
+     console.log('ngOnInit');
       this.tableData1 = {
-          headerRow: [ 'ID', 'Name', 'Country', 'City', 'Salary','Edit'],
-          dataRows: [
-              ['1', 'Dakota Rice', 'Niger', 'Oud-Turnhout', '$36,738'],
-              ['2', 'Minerva Hooper', 'Curaçao', 'Sinaai-Waas', '$23,789'],
-              ['3', 'Sage Rodriguez', 'Netherlands', 'Baileux', '$56,142'],
-              ['4', 'Philip Chaney', 'Korea, South', 'Overland Park', '$38,735'],
-              ['5', 'Doris Greene', 'Malawi', 'Feldkirchen in Kärnten', '$63,542'],
-              ['6', 'Mason Porter', 'Chile', 'Gloucester', '$78,615']
-          ]
+          loader : this.loader,  
+          headerRow: [ 'ID', 'Name', 'Country', 'City', 'Salary','Edit'],       
       };
+
+     
      
   }
 
